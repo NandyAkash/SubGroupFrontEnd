@@ -2,7 +2,9 @@ import React,{Component} from 'react';
 import { Table, Button, ButtonToolbar } from 'react-bootstrap';
 // import { AddDepartment } from './AddDepartment';
 import {AddSubGroup} from './AddSubGroup';
+import { UpdateSubGroup } from './UpdateSubGroup';
 // import { EditDepartment } from './EditDepartment';
+
 
 export class SubGroup extends Component {
 
@@ -72,22 +74,24 @@ export class SubGroup extends Component {
                                 <td>{grp.UpdateDate}</td>
                                 <td>{grp.UpdateTime}</td>
                                 <td>
-                                    {/* <ButtonToolbar>
+                                    <ButtonToolbar>
                                         <Button className='mr-2' variant='info' onClick={()=>{this.setState({editModalShow:true, SubGroupID: grp.SubGroupID, SubGroupName: grp.SubGroupName})}}>Edit</Button>
                                         <Button className='mr-2' variant='danger' onClick={()=>this.deletedep(grp.SubGroupID)}>Delete</Button>
-                                        <EditDepartment show={this.state.editModalShow}
+                                        <UpdateSubGroup show={this.state.editModalShow}
                                         onHide={editModalClose}
                                         SubGroupID={SubGroupID}
                                         SubGroupName={SubGroupName}/>
-                                    </ButtonToolbar> */}
+                                    </ButtonToolbar>
                                 </td>
                             </tr>
                             )}
                     </tbody>
-                </Table>
+                </Table>  
                 <ButtonToolbar>
+                          
                     <Button variant='primary' onClick={()=>this.setState({addModalShow:true})}>
-                    Add Department
+                    Add SubGroup
+                    <i class="bi bi-plus-circle-fill"></i>  
                     </Button>
                     <AddSubGroup show={this.state.addModalShow} onHide={addModalClose}/>
                 </ButtonToolbar>
